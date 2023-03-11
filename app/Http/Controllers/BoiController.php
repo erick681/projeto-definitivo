@@ -22,7 +22,7 @@ class BoiController extends Controller
      */
     public function create()
     {
-        //
+        return view('bois.create');
     }
 
     /**
@@ -30,7 +30,9 @@ class BoiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Boi::create($input);
+        return redirect('student')->with('flash_message','Bovino removido');
     }
 
     /**
@@ -38,7 +40,8 @@ class BoiController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $boi = Boi::find($id);
+        return view('bois.show')->with('bois',$boi);
     }
 
     /**
@@ -46,7 +49,8 @@ class BoiController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $boi = Boi::find($id);
+        return view('bois.edit')->with('bois',$boi);
     }
 
     /**
@@ -54,7 +58,10 @@ class BoiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        Boi::find($id);
+        $input=$request->all();
+        $bois->update($input);
+        return redirect('bois')->with('flash_mesage','dados do bovino atualizado');
     }
 
     /**
@@ -62,6 +69,7 @@ class BoiController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Boi::destroy($id);
+        return redirect('boi')->with('flash_mesage','bovino deletado');
     }
 }

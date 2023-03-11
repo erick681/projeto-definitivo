@@ -13,6 +13,8 @@
         <input type="number" name="leite" id="leite" class="form-control"></br>
         <label>ração</label></br>
         <input type="number" name="ração" id="ração" class="form-control"></br>
+        <label>datanascimento</label></br>
+        <input type="dater" name="data" id="datanascimento" class="form-control"></br>
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
 

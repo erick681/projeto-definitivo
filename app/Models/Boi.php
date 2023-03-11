@@ -11,5 +11,5 @@ class Boi extends Model
     protected $table = 'bois';
     protected $primaryKey = 'id';
     protected $filebase = ['codigo','leite','ração','datanascimento'];
-    
+
 }
